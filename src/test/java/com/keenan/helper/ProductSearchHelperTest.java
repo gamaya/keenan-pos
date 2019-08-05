@@ -48,6 +48,21 @@ public class ProductSearchHelperTest {
     }
 
     @Test
+    public void test_search_exact_item() {
+
+        // setup
+        final String prefix = "001000199446";
+
+        // run tests
+        List<Product> searchList = productSearchHelper.findProducts(prefix);
+
+        // assert
+        assertEquals("Size of Search items did not match.", 1, searchList.size());
+        assertEquals("Product searched was not returned", "001000199446", searchList.get(0).getId());
+
+    }
+
+    @Test
     public void test_search_items_from_beginning_of_list() {
 
         // setup
@@ -57,7 +72,7 @@ public class ProductSearchHelperTest {
         List<Product> searchList = productSearchHelper.findProducts(prefix);
 
         // assert
-        assertEquals("Size of Search items did not match.", 9, searchList.size());
+        assertEquals("Size of Search items did not match.", 10, searchList.size());
 
     }
 

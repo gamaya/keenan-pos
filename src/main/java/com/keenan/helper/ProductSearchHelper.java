@@ -115,7 +115,7 @@ public class ProductSearchHelper {
         }
 
         // Begin walking back through the product to find our starting index
-        boolean walkingBack = true;
+        boolean walkingBack = searchIndex > 0;
         while(walkingBack) {
             if (productList.get(searchIndex - 1).getId().startsWith(productPrefix)) {
                 searchIndex--;
