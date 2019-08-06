@@ -103,7 +103,7 @@ public class ProductSearchHelper {
             searchIndex = (( upperBound - lowerBound ) / 2) + lowerBound;
 
             // If the search index is not within bounds or equal, stop searching
-            if (upperBound == lowerBound) {
+            if (upperBound == lowerBound || upperBound < 0) {
                 searchIndex = NOT_FOUND;
                 searching = false;
             }
